@@ -4,7 +4,6 @@
     <div class="books-container">
       <Book v-for="book in this.$root.books" :key="book.Title" :book="book"></Book>
     </div>
-      <button @click="$router.push( {name: 'About'} )">HEJ</button>
   </div>
 </template>
 
@@ -12,12 +11,17 @@
 import Book from '../components/Book.vue'
 
 export default {
-  components: {Book}
+  components: {Book},
+  data(){
+    return{
+    }
+  },
 }
 </script>
 
 <style lang="sass">
 .books-container
+  max-width: 80%
   display: flex
   justify-content: space-around
   flex-wrap: wrap
