@@ -27,11 +27,7 @@
 </template>
 
 <script>
-import Book from '../components/Book.vue'
-
 export default {
-  components: {Book},
-  // prop: {activeBook: Object},
   data(){
   return{
     readingList: [],
