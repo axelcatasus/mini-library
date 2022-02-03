@@ -1,9 +1,9 @@
 <template>
-  <article :class="book.Color" @click="activateBook">
+  <article :class="book.color">
 		<div class="line">
 			<div class="book-cover">
-				<p class="author">{{book.Author}}</p>
-				<p class="title">{{book.Title}}</p>  
+				<p class="author">{{book.author}}</p>
+				<p class="title">{{book.title}}</p>  
 			</div>
 		</div>
   </article>
@@ -16,8 +16,8 @@ export default {
 	props: {book: Object},
 	methods: {
 		activateBook(){
-			this.$root.activeBook = this.book
-			this.$router.push( {name: 'About', path: this.fixedPath} )
+			// this.$root.activeBook = this.book
+			// this.$router.push( {name: 'About'} )
 			// this.$emit('BookClick', this.book)
 	// 		if(this.activeBook.length){
     //     this.activeBook = []
@@ -31,7 +31,7 @@ export default {
 	},
 	computed: {
 		fixedPath(){
-			return this.book.Title.replace(/\s+/g, '-')
+			return this.book.title.replace(/\s+/g, '-')
 		},
 	},
 	data(){return {
@@ -39,10 +39,10 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="sass" scoped>
 
 article
-	margin: .5rem
+	// margin: 1rem
 	// background: linear-gradient(45deg, rgba(0, 0, 0, .5), white)
 	width: 200px
 	height: 240px
